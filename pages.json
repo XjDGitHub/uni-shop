@@ -52,6 +52,20 @@
                     "style" :                                                                                    
                 {
                     "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false,
+					// 触底事件触发距离
+					"onReachBottomDistance": 150,
+					// 下拉刷新
+					"enablePullDownRefresh":true,
+					"backgroundColor": "#F8F8F8"
+                }
+                
+                }
+                ,{
+                    "path" : "search/search",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
                     "enablePullDownRefresh": false
                 }
                 

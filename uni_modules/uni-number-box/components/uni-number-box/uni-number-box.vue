@@ -73,8 +73,9 @@
 			value(val) {
 				this.inputValue = +val;
 			},
-			modelValue(val) {
-				this.inputValue = +val;
+			modelValue(newVal,oldVal) {
+				if(+newVal !== +oldVal && Number(newVal) && String(newVal).indexOf('.')===-1)
+				this.inputValue = +newVal;
 			}
 		},
 		created() {
@@ -131,7 +132,11 @@
 			},
 			_onBlur(event) {
 				this.$emit('blur', event)
-				let value = event.detail.value;
+				let value = parseInt(event.detail.value);
+				if(!value){
+					this.inputValue=1
+					return
+				}
 				if (isNaN(value)) {
 					this.inputValue = this.min;
 					return;
